@@ -10,10 +10,8 @@ const same = css `
 
 export const Wrapper = styled.div `
     display: inline-block;
-    width: 650px;
-    padding: 10px;
-    border-top: 1px solid grey;
-    border-bottom: 1px solid grey;
+    width: 40vw;
+    padding: 10px;  
 `
 export const TopWrapper = styled.div `
     display: flex;

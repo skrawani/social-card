@@ -7,7 +7,12 @@ import Icons from '../icons/icons.component'
 import { Name, Uname, Date, Text, ContainsImage, Wrapper,TopWrapper} from './container.styles';
 
 
-const Container = () =>(
+const Container = (props) =>{
+
+    console.log(props);
+    const { title, imageUrl } = props;
+
+    return(
     <Wrapper>
         <Logo/>
             <TopWrapper>
@@ -19,16 +24,13 @@ const Container = () =>(
                 {"{ author: @skrawani }"}</Text>
             
             <ContainsImage>
-                <img src="https://miro.medium.com/max/3200/0*z0WlyaPfVlWpCAS2.png" />
-                <PreviewText/>
+                <img src={`${imageUrl}`}/>
+                <PreviewText title={title}/>
             </ContainsImage>
-            <Icons/>
-
-            
-            
-        
-    </Wrapper>
+            <Icons/> 
+    </Wrapper>    
+    )
+};
     
-);
 
 export default Container;

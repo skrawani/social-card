@@ -1,6 +1,12 @@
 .App {
-  position: absolute;
+  width: 85vw;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr ;
+  grid-gap: 20px;
   text-align: center;
-  top: 15vh;
-  left: 30vw;
+}
+h1{
+  
+  
 }
