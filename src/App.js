@@ -1,50 +1,42 @@
-import React from 'react';
-import {Header, Cards} from './App.styles'
+import React from "react";
+import { Header, Cards } from "./App.styles";
 
-import Container from './components/container/container.component';
+import Container from "./components/container/container.component";
 
 class App extends React.Component {
-
   state = {
     error: null,
     isLoaded: false,
-    res : []
+    res: []
   };
- async componentDidMount() {
-    let res = await fetch("https://jsonplaceholder.typicode.com/photos")
-    let data = await res.json()
+  async componentDidMount() {
+    let res = await fetch("https://swapi.co/api/people/");
+    let data = await res.json();
     let count = 0;
-    let image = data.filter(()=> {
-      count += 1
-      return count <= 10
-    })
+    let object = data.results.filter(() => {
+      count += 1;
+      return count <= 10;
+    });
+    // console.log("obj", object);
     this.setState({
-      res: image,
+      res: object,
       isLoaded: true
-    })
-    console.log(this.state);
-}
-  
+    });
+    // console.log(this.state);
+  }
 
-
-  render(){
-
-    const { res} = this.state;
-    return(
+  render() {
+    const { res } = this.state;
+    return (
       <div>
-        <Header>SOCIAL CARDS</Header>
-          <Cards>
-          {
-          res.map((r) =>(
-            <Container key = {r.id} imageUrl = {r.url} title ={ r.title} />
-
+        <Header>Star Wars</Header>
+        <Cards>
+          {res.map(r => (
+            <Container key={r.name} person={r} />
           ))}
-        
         </Cards>
       </div>
-        
-    )
-
+    );
   }
 }
 
