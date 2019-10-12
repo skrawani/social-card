@@ -13,6 +13,6 @@ export const IconsContainer = styled.div`
   width: 100%;
   max-height: 100%;
   @media screen and (max-width: 700px) {
-    font-size: 10px;
+    font-size: 15px;
   }
 `;

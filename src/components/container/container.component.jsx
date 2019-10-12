@@ -35,7 +35,7 @@ const Container = props => {
 
       <ContainsImage>
         <img src={`https://robohash.org/${person.name}`} />
-        <PreviewText title={person.name} />
+        <PreviewText title={person.gender} />
       </ContainsImage>
       <Iconss />
     </Wrapper>
